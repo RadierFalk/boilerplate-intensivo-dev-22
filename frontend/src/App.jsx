@@ -1,17 +1,10 @@
 import './App.css'
+import Header from './components/Header/Header'
 
 function App() {
   return (
     <div className="App">
-      
-      <header>
-        <img scr=""></img>
-        <div>
-          <a>Link1</a>
-          <a>Link2</a>
-          <a>Link3</a>
-        </div>
-      </header>
+      <Header></Header>
 
       <div className="content">
 
