@@ -4,12 +4,9 @@ import Header from './components/Header/Header'
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-
-      <div className="content">
-
-
-      </div>
+      <Header />
+      
+      <div className="content"></div>
 
       <footer>
         Todos os direitos reservados ~ 2022.
