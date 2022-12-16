@@ -52,5 +52,8 @@ const api = {
             return getRequest(this.endpoint())
     },
 },
+    },
+}
 
 
+    export default api
