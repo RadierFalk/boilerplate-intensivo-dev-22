@@ -28,17 +28,29 @@ const deleteRequest = function(url,){
 }
 
 const api = {
-    baseUrl: () => "http://localhost:3000",
+    baseUrl: function () {
+     "http://localhost:3000"
+    },
     item: {
-        endpoint:() => api.baseUrl() + "/item",
-        list: () => getRequest(this.endpoint),
-        create: (body) => createRequest(this.endpoint, body),
-        delete: (id) => deleteRequest(this.endpoint + "/" + id)
+        endpoint: function() {
+            return api.baseUrl() + "/item"
+        },
+        list: function () {
+            return getRequest(this.endpoint())
+        },
+        create: function (bory) {
+            return createRequest(this.endpoint(), body)
+        },
+        delete: function(id) {
+            return deleteRequest(this.endpoint() + "/" + id)
     },
     category: {
-        endpoint:() => api.baseUrl() + "/category",
-        list: () => getRequest(this.endpoint)
-    }
-};
+        endpoint: function() {
+            return api.baseUrl() + "/category"
+    },
+        list: function() {
+            return getRequest(this.endpoint())
+    },
+},
 
-api.baseUrl;
+
