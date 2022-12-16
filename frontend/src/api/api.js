@@ -28,15 +28,16 @@ const deleteRequest = function(url,){
 }
 
 const api = {
-    baseUrl: "http://localhost:3000",
+    baseUrl: () => "http://localhost:3000",
     item: {
-        endpoint: api.baseUrl + "/item",
-        list: () => {},
-        create: () => {},
+        endpoint:() => api.baseUrl() + "/item",
+        list: () => getRequest(this.endpoint),
+        create: (body) => createRequest(this.endpoint, body),
+        delete: (id) => deleteRequest(this.endpoint + "/" + id)
     },
     category: {
-        endpoint: api.baseUrl + "/category",
-        list: () => {}
+        endpoint:() => api.baseUrl() + "/category",
+        list: () => getRequest(this.endpoint)
     }
 };
 
