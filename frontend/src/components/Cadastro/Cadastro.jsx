@@ -1,4 +1,25 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import API from "../../api/api";
+
 function Cadastro() {
+    const [categorias, setCategorias] = useState([
+        {_id: 0, name: "Carregando Categorias..."},
+    ]);
+
+    async function loadCategories() {
+        const categoriasDoBanco = await API.category.list()
+        const categoriasCarregadas = await categoriasDoBanco.json(
+        console.log("Carregou!"))
+        setCategorias(categoriasCarregadas);
+        
+    } 
+
+    useEffect(function(){
+        loadCategories();
+    }, []);
+    
+
     return(
         <form className="container">
             <h1>Cadastro de Itens</h1>
