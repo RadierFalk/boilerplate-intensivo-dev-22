@@ -1,6 +1,6 @@
 import Card from "../Card/Card";
 import { useEffect, useState } from "react";
-import API from "../../";
+import API from "../../api/api";
 
 function ItemList() {
   const [items, setItems] = useState([]);
@@ -26,6 +26,7 @@ function ItemList() {
               name={el.name}
               url={el.imageUrl}
               category={el.category.name}
+              refreshItem = {getItems}
             />
           </div>
         ))}

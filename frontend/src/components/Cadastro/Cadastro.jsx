@@ -24,12 +24,12 @@ function Cadastro(){
 
         formEl.submit.disabled = true
 
-        const bory = {
+        const body = {
             "name" : formEl.nome.value,
             "image" : formEl.url.value,
             "category" : formEl.category.value
         }
-        
+
         const request = await API.item.create(body)
 
         formEl.submit.disabled = false
