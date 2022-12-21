@@ -29,7 +29,7 @@ function Cadastro(){
             "image" : formEl.url.value,
             "category" : formEl.category.value
         }
-
+        
         const request = await API.item.create(body)
 
         formEl.submit.disabled = false
